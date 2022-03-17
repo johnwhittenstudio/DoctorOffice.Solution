@@ -8,7 +8,7 @@
 <hr />
 <h5>@Html.DisplayNameFor(model => model.Name):</h5> <p>@Html.DisplayFor(model => model.Name)</p>
 
-<h5>Specialities:</h5>
+<h5>Specialties:</h5>
 @foreach (var join in Model.JoinEntities2)
   {
     @join.Specialty.Name
