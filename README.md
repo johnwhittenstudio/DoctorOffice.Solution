@@ -1,4 +1,4 @@
-# **Doctor's Office**
+# **🩺 Doctor's Office🔬**
 
 #### _a C# MVC Doctor's Office app to keep track of doctors, their specialties and patients._
 
@@ -58,7 +58,7 @@ An app for a Doctor's Office to keep track of doctors, their specialties and pat
 ```
 {
     "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=john_whitten;uid=root;pwd=[YOUR-PASSWORD-HERE];"
+        "DefaultConnection": "Server=localhost;Port=3306;database=doctor_office;uid=root;pwd=[YOUR-PASSWORD-HERE];"
     }
 }
 ```
