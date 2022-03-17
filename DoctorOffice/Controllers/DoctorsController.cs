@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using DoctorOffice.Models;
@@ -14,16 +15,14 @@ namespace DoctorOffice.Controllers
     {
       _db = db;
     }
-
     public ActionResult Index()
     {
       List<SpecialtyDoctor> model = _db.SpecialtyDoctor.ToList();
       return View(model);
     }
-
     public ActionResult Create()
     {
-      ViewBag.SpecialtyId = new SelectList(_db.Specialties, "SpecialtyId", "Name");
+      ViewBag.SpecialtyId = new SelectList(_db.Specialtys, "SpecialtyId", "Name");
       return View();
     }
 
@@ -39,7 +38,6 @@ namespace DoctorOffice.Controllers
       }
       return RedirectToAction("Index");
     }
-
     public ActionResult Details(int id)
     {
       var thisDoctor = _db.Doctors
@@ -47,7 +45,7 @@ namespace DoctorOffice.Controllers
           .ThenInclude(join => join.Patient)
           .FirstOrDefault(doctor => doctor.DoctorId == id);
       return View(thisDoctor);
-    }
+    } 
     public ActionResult Edit(int id)
     {
       var thisDoctor = _db.Doctors.FirstOrDefault(doctor => doctor.DoctorId == id);
@@ -61,7 +59,6 @@ namespace DoctorOffice.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult Delete(int id)
     {
       var thisDoctor = _db.Doctors.FirstOrDefault(doctor => doctor.DoctorId == id);
@@ -76,5 +73,5 @@ namespace DoctorOffice.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-  }
-}
+  }  
+}  

@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+<div class="home">
+
+  <div class="card border-secondary mb-3 mt-5" style="max-width: 60rem;">
+    <div class="card-header"><h1>Doctor Office Batabase Management</h1></div>
+    <div class="card-body">
+      <h4 class="card-title"></h4>
+      <p class="card-text">
+        @Html.ActionLink("See all patients", "Index", "Patients", new { area = "" }, new { @class = "btn btn-secondary btn-lg my-5 mx-4"  })
+        @Html.ActionLink("See all doctors", "Index", "Doctors", new { area = "" }, new { @class = "btn btn-secondary btn-lg my-5 mx-4" })
+        @Html.ActionLink("See all specialties", "Index", "Specialtys", new { area = "" }, new { @class = "btn btn-secondary btn-lg my-5 mx-4" })
+      </p>
+    </div>
+  </div>  
+</div>
